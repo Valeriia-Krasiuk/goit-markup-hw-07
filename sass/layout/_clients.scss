@@ -1,0 +1,37 @@
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clients-list {
+  display: flex;
+}
+.clients-list__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.clients-list__link {
+  @include bordered($iconColor);
+  @extend %flex;
+
+  width: 170px;
+  height: 92px;
+  border-radius: 4px;
+
+  transition: border $transitionDuration $transitionTimingFunction;
+
+  &:hover,
+  &:focus {
+    @include bordered($accentColor);
+  }
+}
+.clients-list__icon {
+  fill: $iconColor;
+
+  transition: fill $transitionDuration $transitionTimingFunction;
+
+  .clients-list__link:hover &,
+  .clients-list__link:focus & {
+    fill: $accentColor;
+  }
+}
